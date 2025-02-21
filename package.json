@@ -12,7 +12,13 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
-    "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "up-dev-db": "docker-compose -f dev.docker-compose.yml up --build -d",
+    "stop-dev-db": "docker-compose -f dev.docker-compose.yml stop",
+    "down-dev-db": "docker-compose -f dev.docker-compose.yml down",
+    "up": "docker-compose up --build -d",
+    "stop": "docker-compose stop",
+    "down": "docker-compose down"
   },
   "dependencies": {
     "@payloadcms/db-mongodb": "latest",
@@ -20,6 +26,7 @@
     "@payloadcms/payload-cloud": "latest",
     "@payloadcms/richtext-lexical": "latest",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.4.7",
     "graphql": "^16.8.1",
     "next": "15.1.5",
     "payload": "latest",
@@ -39,7 +46,7 @@
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0",
-    "pnpm": "^9"
+    "pnpm": "^10"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
